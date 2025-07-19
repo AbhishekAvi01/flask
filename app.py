@@ -1,13 +1,9 @@
 from flask import Flask
-
-# Create the Flask app
 app = Flask(__name__)
 
-# Define the route
-@app.route('/home')
+@app.route('/')
 def home():
-    return "Hello, World! This is a basic Flask app."
+    return "Hello from Flask in Docker via Jenkins!"
 
-# Run the app
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
