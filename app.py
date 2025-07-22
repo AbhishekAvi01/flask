@@ -1,7 +1,6 @@
-
 from flask import Flask
 
-app = Flask(_name_)
+app = Flask(__name__)  # ✅ Correct usage
 
 @app.route('/')
 def home():
@@ -37,5 +36,5 @@ def footer():
     </footer>
     '''
 
-if _name_ == '_main_':
-    app.run(debug=True,port=5000,host="0.0.0.0")
+if __name__ == '__main__':  # ✅ Correct usage
+    app.run(debug=True, port=5000, host="0.0.0.0")
